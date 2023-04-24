@@ -8,4 +8,4 @@ ordering.api:
     image: ${DOCKER_REGISTRY-}orderingapi
     build:
       context: .
-      dockerfile: Services/Ordering/Ordering.API/Dockerfile
+      dockerfile: Services/Ordering/Ordering.API/Docker-file

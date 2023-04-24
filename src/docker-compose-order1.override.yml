@@ -19,6 +19,5 @@ services:
         - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
         - orderdb
-        - rabbitmq
     ports:
         - "8004:80"

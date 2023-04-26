@@ -14,6 +14,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
       - "GrpcSettings:DiscountUrl=http://172.31.19.14:8003"
+      - "EventBusSettings:HostAddress=172.31.27.250://guest:guest@rabbitmq:5672"
     depends_on:
       - basketdb
     ports:

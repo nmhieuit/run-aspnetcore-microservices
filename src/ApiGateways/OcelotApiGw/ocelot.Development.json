@@ -119,6 +119,19 @@
       ],
       "UpstreamPathTemplate": "/Order/{userName}",
       "UpstreamHttpMethod": [ "GET" ]
+    },
+    //BFF
+    {
+      "DownstreamPathTemplate": "/api/v1/Shopping/{userName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "172.31.27.108",
+          "Port": "8005"
+        }
+      ],
+      "UpstreamPathTemplate": "/Shopping/{userName}",
+      "UpstreamHttpMethod": [ "GET" ]
     }
   ],
   "GlobalConfiguration": {

@@ -5,6 +5,6 @@ services:
     container_name: ocelotapigw
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "ElasticConfiguration:Uri=http://172.31.9.27:9200"
     ports:
       - "8010:80"

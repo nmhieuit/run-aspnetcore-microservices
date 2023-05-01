@@ -8,6 +8,6 @@ services:
         - "ApiSettings:CatalogUrl=http://172.31.20.135:8000"
         - "ApiSettings:BasketUrl=http://172.31.18.221:8001"
         - "ApiSettings:OrderingUrl=http://172.31.7.134:8004"
-        - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+        - "ElasticConfiguration:Uri=http://172.31.9.27:9200"
     ports:
         - "8005:80"

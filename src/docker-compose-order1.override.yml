@@ -16,7 +16,7 @@ services:
         - ASPNETCORE_ENVIRONMENT=Development
         - "ConnectionStrings:OrderingConnectionString=Server=172.31.7.134;Database=OrderDb;User Id=sa;Password=SwN12345678"            
         - "EventBusSettings:HostAddress=amqp://guest:guest@172.31.27.250:5672"
-        - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+        - "ElasticConfiguration:Uri=http://172.31.9.27:9200"
     depends_on:
         - orderdb
     ports:

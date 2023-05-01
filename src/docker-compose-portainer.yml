@@ -5,7 +5,16 @@ services:
     image: portainer/portainer-ce
   
   pgadmin:
-    image: dpage/pgadmin4  
+    image: dpage/pgadmin4
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.2
+
+  webstatus:
+    image: ${DOCKER_REGISTRY-}webstatus
+    build:
+      context: .
+      dockerfile: WebApps/WebStatus/Dockerfile
 
 volumes:
   portainer_data:

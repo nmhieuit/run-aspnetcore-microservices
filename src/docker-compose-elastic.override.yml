@@ -11,4 +11,11 @@ services:
     ports:
         - "9200:9200"
     volumes:
-        - elasticsearch-data:/usr/share/elasticsearch/data   
+        - elasticsearch-data:/usr/share/elasticsearch/data
+
+kibana:
+    container_name: kibana
+    environment:        
+        - ELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+        - "5601:5601"

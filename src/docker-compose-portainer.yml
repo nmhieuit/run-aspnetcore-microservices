@@ -3,15 +3,6 @@ version: '3.4'
 services: 
   portainer:
     image: portainer/portainer-ce
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.9.2
-
-  webstatus:
-    image: ${DOCKER_REGISTRY-}webstatus
-    build:
-      context: .
-      dockerfile: WebApps/WebStatus/Dockerfile
-
+    
 volumes:
   portainer_data:

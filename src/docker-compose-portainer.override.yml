@@ -10,10 +10,3 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
-
-  kibana:
-    container_name: kibana
-    environment:        
-        - ELASTICSEARCH_URL=http://172.31.9.27:9200
-    ports:
-        - "5601:5601"

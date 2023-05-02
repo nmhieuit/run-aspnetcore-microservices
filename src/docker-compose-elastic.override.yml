@@ -13,7 +13,7 @@ services:
     volumes:
         - elasticsearch-data:/usr/share/elasticsearch/data
 
-kibana:
+ kibana:
     container_name: kibana
     environment:        
         - ELASTICSEARCH_URL=http://elasticsearch:9200

@@ -3,3 +3,9 @@
   tasks:
   - name: building docker image
     command: docker-compose -f docker-compose-catalog.yml -f docker-compose-catalog.override.yml up -d
+
+  -name: tag docker image
+    command: docker tag catalogapi:latest nmhieuit/catalogapi:latest
+
+  name: push docker image
+    command: docker push nmhieuit/catalogapi:latest

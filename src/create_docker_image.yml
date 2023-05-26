@@ -1,0 +1,8 @@
+- hosts: 172.31.28.170
+  become: true
+  tasks:
+  - name: goto src folder
+    command: cd src
+
+  - name: building docker image
+    command: docker-compose -f docker-compose-catalog.yml -f docker-compose-catalog.override.yml up -d

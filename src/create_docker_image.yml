@@ -7,8 +7,8 @@
   - name: tag docker image
     command: docker tag catalogapi:latest nmhieuit/catalogapi:latest
 
-  -name: login docker hub
+  - name: login docker hub
     command: docker login -u nmhieuit -p Hieu@1983
-    
+
   - name: push docker image
     command: docker push nmhieuit/catalogapi:latest

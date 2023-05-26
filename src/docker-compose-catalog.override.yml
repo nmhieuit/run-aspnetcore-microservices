@@ -1,13 +1,13 @@
 version: '3.4'
 
 services:
-  # catalogdb:
-  #   container_name: catalogdb
-  #   restart: always
-  #   ports:
-  #       - "27017:27017"
-  #   volumes:
-  #       - mongo_data:/data/db
+  catalogdb:
+    container_name: catalogdb
+    restart: always
+    ports:
+        - "27017:27017"
+    volumes:
+        - mongo_data:/data/db
 
   catalog.api:
     container_name: catalog.api
@@ -15,8 +15,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
       - "ElasticConfiguration:Uri=http://172.31.9.27:9200"
-    # depends_on:
-    #   - catalogdb
+    depends_on:
+      - catalogdb
     ports:
       - "8000:80"
 

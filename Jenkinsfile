@@ -6,11 +6,8 @@ pipeline {
   stages{
     stage('Build') { 
       steps { 
-       withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
-         script{
-           app =  docker.build("nmhieuit")
-         }
-       }
+        sh 'docker-compose -f docker-compose.yml -f docker-compose.override.yml build'     
+        echo 'Docker-compose-build Build Image Completed'       
       }
     }
   }

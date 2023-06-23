@@ -6,8 +6,7 @@ pipeline {
   stages{
     stage('Build') { 
       steps { 
-        sh 'docker-compose -f src/docker-compose.yml -f src/docker-compose.override.yml build'     
-        sh 'docker tag mongo:latest nmhieuit/mongo:latest'
+        app = docker.build("-f src/Services/Catalog/");     
         sh 'docker tag catalogapi:latest nmhieuit/catalogapi:latest'
       }
     }

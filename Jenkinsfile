@@ -4,10 +4,13 @@ pipeline {
         maven 'Maven_3_5_2'  
   }
   stages{
-    stage('Build') { 
+    stage('Build') {
       steps { 
-        app = docker.build('src/Services/Catalog/Catalog.API');     
-        sh 'docker tag catalogapi:latest nmhieuit/catalogapi:latest'
+         withDockerRegistry([credentialsId: "dockerlogin", url: "src/Services/Catalog/Catalog.API"]) {
+           script{
+           app =  docker.build("asg")
+           }
+         }
       }
     }
   }

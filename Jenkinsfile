@@ -6,7 +6,7 @@ pipeline {
   stages{
     stage('Build') { 
       steps { 
-        sh 'docker-compose -f docker-compose.yml -f docker-compose.override.yml build'     
+        sh 'docker-compose -f /src/docker-compose.yml -f /src/docker-compose.override.yml build'     
         echo 'Docker-compose-build Build Image Completed'       
       }
     }

@@ -6,9 +6,9 @@ pipeline {
   stages{
     stage('Build') {
       steps { 
-         withDockerRegistry([credentialsId: "dockerlogin", url: "src/Services/Catalog/Catalog.API"]) {
+         withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
            script{
-           app =  docker.build("asg")
+           app =  docker.build "-f src/Services/Catalog/Catalog.API/ ."
            }
          }
       }

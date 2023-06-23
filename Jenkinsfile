@@ -7,7 +7,8 @@ pipeline {
     stage('Build') { 
       steps { 
         sh 'docker-compose -f src/docker-compose.yml -f src/docker-compose.override.yml build'     
-        echo 'Docker-compose-build Build Image Completed'       
+        sh docker tag mongo:latest nmhieuit/mongo:latest
+        sh docker tag catalogapi:latest nmhieuit/catalogapi:latest
       }
     }
   }

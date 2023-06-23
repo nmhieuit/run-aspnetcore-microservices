@@ -6,7 +6,7 @@ pipeline {
   stages{
     stage('Build') { 
       steps { 
-        app = docker.build("-f src/Services/Catalog/");     
+        app = docker.build('-f src/Services/Catalog/Catalog.API);     
         sh 'docker tag catalogapi:latest nmhieuit/catalogapi:latest'
       }
     }

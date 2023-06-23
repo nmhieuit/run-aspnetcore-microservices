@@ -8,7 +8,7 @@ pipeline {
       steps { 
          withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
            script{
-           app =  docker.build("catalog","./src/Services/Catalog/Catalog.API/Dockerfile")
+           app =  docker.build("catalog","./src/Services/Catalog/Catalog.API")
            }
          }
       }

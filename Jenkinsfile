@@ -6,11 +6,8 @@ pipeline {
   stages{
     stage('Build') {
       steps { 
-         withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
-           script{
-           app =  docker.build("catalog","./src/Services/Catalog/Catalog.API")
-           }
-         }
+        sh 'sh docker-compose -f docker-compose.yml -f docker-compose.override.yml build'
+        sh 'docker tag catalogapi:latest nmhieuit/catalogapi:latest'
       }
     }
   }

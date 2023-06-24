@@ -17,7 +17,7 @@ spec:
       containers:
         - name: catalogapi
           image: nmhieuit/catalogapi:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           resources:

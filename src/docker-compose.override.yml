@@ -64,8 +64,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
-  catalog.api:
-    container_name: catalog.api
+  catalogapi:
+    container_name: catalogapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
@@ -130,7 +130,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
-        - catalog.api
+        - catalogapi
         - basket.api
         - discount.api
         - ordering.api
@@ -141,12 +141,12 @@ services:
     container_name: shopping.aggregator
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
-        - "ApiSettings:CatalogUrl=http://catalog.api"
+        - "ApiSettings:CatalogUrl=http://catalogapi"
         - "ApiSettings:BasketUrl=http://basket.api"
         - "ApiSettings:OrderingUrl=http://ordering.api"
         - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
-        - catalog.api
+        - catalogapi
         - basket.api
         - ordering.api
     ports:
@@ -160,7 +160,7 @@ services:
         - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
         - ocelotapigw
-        - catalog.api
+        - catalogapi
         - basket.api
         - discount.api
         - ordering.api
@@ -193,7 +193,7 @@ services:
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
         - HealthChecksUI__HealthChecks__0__Name=Catalog Health Check
-        - HealthChecksUI__HealthChecks__0__Uri=http://catalog.api/hc
+        - HealthChecksUI__HealthChecks__0__Uri=http://catalogapi/hc
         - HealthChecksUI__HealthChecks__1__Name=Basket Health Check
         - HealthChecksUI__HealthChecks__1__Uri=http://basket.api/hc
         - HealthChecksUI__HealthChecks__2__Name=Discount Health Check

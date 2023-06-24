@@ -15,7 +15,6 @@ pipeline {
         sh 'docker tag mongo:latest nmhieuit/mongo:latest'
         sh 'docker tag redis:alpine nmhieuit/redis:latest'
         sh 'docker tag postgres:latest nmhieuit/postgres:latest'
-        sh 'docker tag mcr.microsoft.com/mssql/server:2017-latest nmhieuit/mcr.microsoft.com/mssql/server:latest'
       }
     }
     stage('push') {
@@ -26,7 +25,6 @@ pipeline {
         sh 'docker push nmhieuit/mongo:latest'
         sh 'docker push nmhieuit/redis:latest'
         sh 'docker push nmhieuit/postgres:latest'
-        sh 'docker push nmhieuit/mcr.microsoft.com/mssql/server:latest'
       }
     }
   }

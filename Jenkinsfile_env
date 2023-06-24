@@ -1,1 +1,37 @@
-
+pipeline {
+  agent any
+  tools { 
+        maven 'Maven_3_5_2'  
+  }
+  environment {     
+    DOCKERHUB_CREDENTIALS= credentials('dockerlogin')     
+  }
+  stages{
+    stage('Build') {
+      steps {
+        sh 'docker-compose -f src/docker-compose.yml -f src/docker-compose.override.yml build'
+        sh 'docker tag ocelotapigw:latest nmhieuit/ocelotapigw:latest'
+        sh 'docker tag rabbitmq:3-management-alpine nmhieuit/rabbitmq:latest'
+        sh 'docker tag docker.elastic.co/kibana/kibana:7.9.2 nmhieuit/docker.elastic.co/kibana/kibana:latest'
+        sh 'docker tag docker.elastic.co/elasticsearch/elasticsearch:7.9.2 nmhieuit/docker.elastic.co/elasticsearch/elasticsearch:latest'
+        sh 'docker tag mongo:latest nmhieuit/mongo:latest'
+        sh 'docker tag redis:alpine nmhieuit/redis:latest'
+        sh 'docker tag postgres:latest nmhieuit/postgres:latest'
+        sh 'docker tag mcr.microsoft.com/mssql/server:2017-latest nmhieuit/mcr.microsoft.com/mssql/server:latest'
+      }
+    }
+    stage('push') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        sh 'docker push nmhieuit/ocelotapigw:latest'
+        sh 'docker push nmhieuit/rabbitmq:latest'
+        sh 'docker push nmhieuit/docker.elastic.co/kibana/kibana:latest'
+        sh 'docker push nmhieuit/docker.elastic.co/elasticsearch/elasticsearch:latest'
+        sh 'docker push nmhieuit/mongo:latest'
+        sh 'docker push nmhieuit/redis:latest'
+        sh 'docker push nmhieuit/postgres:latest'
+        sh 'docker push nmhieuit/mcr.microsoft.com/mssql/server:latest'
+      }
+    }
+  }
+}

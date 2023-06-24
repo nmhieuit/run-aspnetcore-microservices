@@ -6,7 +6,7 @@ pipeline {
   stages{
     stage('Build') {
       steps { 
-        sh 'sh docker-compose -f "src/docker-compose.yml" -f "src/docker-compose.override.yml" build'
+        sh 'sh docker-compose -f "./src/docker-compose.yml" -f "./src/docker-compose.override.yml" build'
         sh 'docker tag catalogapi:latest nmhieuit/catalogapi:latest'
       }
     }

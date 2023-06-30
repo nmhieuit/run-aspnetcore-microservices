@@ -23,7 +23,7 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
-           - name: CacheSettings
+            - name: CacheSettings
               valueFrom:
                   configMapKeyRef:
                     name: example-redis-config

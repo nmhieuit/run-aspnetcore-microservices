@@ -23,8 +23,11 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
-            - name: DatabaseSettings
-              value: "ConnectionString=mongodb://username:password@mongo-service:27017"
+            - name: DatabaseSettings__ConnectionString
+              valueFrom:
+                  configMapKeyRef:
+                    name: mongo-configmap
+                    key: connection_string
             - name: ElasticConfiguration
               value: "Uri=http://elasticsearch:9200"  
           resources:

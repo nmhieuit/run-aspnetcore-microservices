@@ -4,4 +4,4 @@ metadata:
   name: example-redis-config
 data:
   redis-config: ""
-  ConnectionString: "basketdb:6379"
+  ConnectionString: basketdb:6379

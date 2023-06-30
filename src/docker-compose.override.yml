@@ -130,7 +130,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
-        - catalogapi
+        - catalog.api
         - basket.api
         - discount.api
         - ordering.api

@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: basketdb-configmap
 data:
-  ConnectionString: basketdb:6379
+  ConnectionString: basketdb-service:6379

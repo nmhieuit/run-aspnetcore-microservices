@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocelotapigw-deployment
+  labels:
+    app: ocelotapigw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ocelotapigw
+  template:
+    metadata:
+      labels:
+        app: ocelotapigw
+    spec:
+      containers:
+        - name: ocelotapigw
+          image: nmhieuit/ocelotapigw:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Development"
+            - name: DatabaseSettings__ConnectionString
+              valueFrom:
+                  configMapKeyRef:
+                    name: mongo-configmap
+                    key: connection_string
+            - name: ElasticConfiguration
+              value: "Uri=http://elasticsearch:9200"  
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ocelotapigw-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ocelotapigw
+  ports:
+    - protocol: TCP
+      port: 8010
+      targetPort: 80

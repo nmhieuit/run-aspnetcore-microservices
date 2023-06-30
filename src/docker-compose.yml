@@ -22,7 +22,7 @@ services:
   portainer:
     image: portainer/portainer-ce
 
-  catalogapi:
+  catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
       context: .

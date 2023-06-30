@@ -27,7 +27,7 @@ spec:
               valueFrom:
                   configMapKeyRef:
                     name: example-redis-config
-                    key: connection_string   
+                    key: ConnectionString   
             - name: ElasticConfiguration
               value: "Uri=http://elasticsearch:9200"  
           resources:

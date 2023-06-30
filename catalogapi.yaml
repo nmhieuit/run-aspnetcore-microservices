@@ -43,7 +43,6 @@ kind: Service
 metadata:
   name: catalogapi-service
 spec:
-  type: LoadBalancer
   selector:
     app: catalogapi
   ports:

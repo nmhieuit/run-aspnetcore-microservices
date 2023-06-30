@@ -5,7 +5,7 @@ metadata:
   labels:
     app: catalogapi
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: catalogapi
@@ -19,7 +19,14 @@ spec:
           image: nmhieuit/catalogapi:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 80
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Development"
+            - name: DatabaseSettings
+              value: "ConnectionString=mongodb://catalogdb:27017"
+            - name: ElasticConfiguration
+              value: "Uri=http://elasticsearch:9200"  
           resources:
             requests:
               memory: "64Mi"
@@ -39,4 +46,4 @@ spec:
   ports:
     - protocol: TCP
       port: 8000
-      targetPort: 8000
+      targetPort: 80

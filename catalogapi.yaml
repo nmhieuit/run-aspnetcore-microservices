@@ -24,7 +24,7 @@ spec:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: DatabaseSettings
-              value: "ConnectionString=mongodb://username:password@catalogdb-service:27017"
+              value: "ConnectionString=mongodb://catalogdb-service:27017"
             - name: ElasticConfiguration
               value: "Uri=http://elasticsearch:9200"  
           resources:

@@ -24,7 +24,7 @@ spec:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: CacheSettings
-              value: "ConnectionString=basketdb-service:6379"  
+              value: "CacheSettings:ConnectionString=basketdb-service:6379"  
             # - name: CacheSettings
             #   valueFrom:
             #       configMapKeyRef:

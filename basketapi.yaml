@@ -23,11 +23,11 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
-            # - name: GrpcSettings__DiscountUrl
-            #   valueFrom:
-            #       configMapKeyRef:
-            #         name: basketgrpc-configmap
-            #         key: DiscountUrl
+            - name: GrpcSettings__DiscountUrl
+              valueFrom:
+                  configMapKeyRef:
+                    name: discountgrpc-configmap
+                    key: DiscountUrl
             - name: CacheSettings__ConnectionString
               valueFrom:
                   configMapKeyRef:

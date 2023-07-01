@@ -23,7 +23,7 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
-            - name: CacheSettings__ConnectionString
+            - name: DatabaseSettings__ConnectionString
               valueFrom:
                   configMapKeyRef:
                     name: basketdb-configmap

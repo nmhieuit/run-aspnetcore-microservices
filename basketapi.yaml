@@ -24,7 +24,7 @@ spec:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: GrpcSettings
-              value: "DiscountUrl=http://discountgrpc-service:8001"
+              value: "DiscountUrl=http://discountgrpc-service"
             # - name: GrpcSettings
             #   valueFrom:
             #       configMapKeyRef:

@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: discountgrpc-configmap
 data:
-  DiscountUrl: 10.100.208.65:8003
+  DiscountUrl: http://discountgrpc

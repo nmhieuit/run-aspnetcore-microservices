@@ -25,11 +25,6 @@ spec:
               value: "Development"
             - name: GrpcSettings__DiscountUrl
               value: "http://discountgrpc-service:8003"
-            # - name: GrpcSettings__DiscountUrl
-            #   valueFrom:
-            #       configMapKeyRef:
-            #         name: discountgrpc-configmap
-            #         key: DiscountUrl
             - name: CacheSettings__ConnectionString
               valueFrom:
                   configMapKeyRef:

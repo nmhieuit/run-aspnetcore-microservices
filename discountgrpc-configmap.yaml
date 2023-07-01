@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: discountgrpc-configmap
-data:
-  DiscountUrl: "http://discountgrpc-service:8003"

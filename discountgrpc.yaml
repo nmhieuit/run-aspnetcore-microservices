@@ -42,6 +42,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: discountgrpc-service
+  labels:
+    app: discountgrpc
 spec:
   type: LoadBalancer
   selector:

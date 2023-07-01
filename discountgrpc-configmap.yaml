@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: discountgrpc-configmap
 data:
-  DiscountUrl: "http://discountgrpc-service"
+  DiscountUrl: "DiscountUrl=http://discountgrpc-service"

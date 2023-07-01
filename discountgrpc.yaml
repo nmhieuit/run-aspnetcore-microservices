@@ -43,7 +43,6 @@ kind: Service
 metadata:
   name: discountgrpc-service
 spec:
-  type: LoadBalancer
   selector:
     app: discountgrpc
   ports:

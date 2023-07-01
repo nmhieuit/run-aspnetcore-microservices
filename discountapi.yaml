@@ -26,7 +26,7 @@ spec:
             - name: DatabaseSettings__ConnectionString
               valueFrom:
                   configMapKeyRef:
-                    name: basketdb-configmap
+                    name: discountdb-configmap
                     key: ConnectionString   
             - name: ElasticConfiguration
               value: "Uri=http://elasticsearch:9200"  

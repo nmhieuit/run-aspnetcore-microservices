@@ -23,13 +23,11 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
-            - name: CacheSettings
-              value: "CacheSettings__ConnectionString=basketdb-service:6379"  
-            # - name: CacheSettings
-            #   valueFrom:
-            #       configMapKeyRef:
-            #         name: basketdb-configmap
-            #         key: ConnectionString   
+            - name: CacheSettings__ConnectionString
+              valueFrom:
+                  configMapKeyRef:
+                    name: basketdb-configmap
+                    key: ConnectionString   
             - name: ElasticConfiguration
               value: "Uri=http://elasticsearch:9200"  
           resources:

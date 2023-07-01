@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: discountgrpc-configmap
 data:
-  DiscountUrl: http://af2c5f3a9e54d4c459768c1f198995ef-2013083899.ap-southeast-2.elb.amazonaws.com:8003
+  DiscountUrl: grpc://discountgrpc-service:8003

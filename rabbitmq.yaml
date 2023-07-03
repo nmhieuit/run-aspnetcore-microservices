@@ -24,14 +24,7 @@ spec:
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: ElasticConfiguration
-              value: "Uri=http://elasticsearch:9200"  
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+              value: "Uri=http://elasticsearch:9200"
 ---
 apiVersion: v1
 kind: Service

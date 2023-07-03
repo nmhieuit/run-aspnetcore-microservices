@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ocelotapigw-deployment
+  name: rabbitmq-deployment
   labels:
-    app: ocelotapigw
+    app: rabbitmq
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ocelotapigw
+      app: rabbitmq
   template:
     metadata:
       labels:
-        app: ocelotapigw
+        app: rabbitmq
     spec:
       containers:
-        - name: ocelotapigw
-          image: nmhieuit/ocelotapigw:latest
+        - name: rabbitmq
+          image: rabbitmq:3-management-alpine
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -36,12 +36,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ocelotapigw-service
+  name: rabbitmq-service
 spec:
   type: LoadBalancer
   selector:
-    app: ocelotapigw
+    app: rabbitmq
   ports:
     - protocol: TCP
-      port: 8010
+      port: 5672
       targetPort: 80

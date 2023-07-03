@@ -3,4 +3,4 @@ kubectl apply --namespace=st -f catalogdb-configmap.yaml -f catalogdb-secret.yam
 kubectl apply --namespace=st -f basketdb-configmap.yaml -f basketdb.yaml -f basketapi.yaml
 kubectl apply --namespace=st -f discountdb-configmap.yaml -f discountdb.yaml -f discountgrpc.yaml -f discountapi.yaml
 kubectl apply --namespace=st -f orderdb.yaml -f orderingapi.yaml
-kubectl apply --namespace=st -f ocelotapigw.yaml -f aspnetrunbasics.yaml
+kubectl apply --namespace=st -f ocelotapigw.yaml -f aspnetrunbasics.yaml -f rabbitmq.yaml

@@ -31,6 +31,7 @@ roleRef:
   kind: Role
   name: rabbitmq
 ---
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: rabbitmq-config
@@ -50,6 +51,7 @@ data:
     ##cluster_formation.classic_config.nodes.2 = rabbit@rabbitmq-1.rabbitmq.rabbits.svc.cluster.local
     ##cluster_formation.classic_config.nodes.3 = rabbit@rabbitmq-2.rabbitmq.rabbits.svc.cluster.local
 ---
+apiVersion: v1
 kind: Secret
 metadata:
   name: rabbit-secret
@@ -58,6 +60,7 @@ data:
   # echo -n "cookie-value" | base64
   RABBITMQ_ERLANG_COOKIE: V0lXVkhDRFRDSVVBV0FOTE1RQVc=
 ---
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rabbitmq
@@ -143,6 +146,7 @@ spec:
         requests:
           storage: 50Mi
 ---
+apiVersion: v1
 kind: Service
 metadata:
   name: rabbitmq

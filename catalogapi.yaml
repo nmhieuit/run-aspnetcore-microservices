@@ -30,12 +30,12 @@ spec:
           ports:
             - containerPort: 80
           env:
-            # - name: DD_LOGS_INJECTION
-            #   value: "true"
-            # - name: DD_TRACE_SAMPLE_RATE
-            #   value: "0.5"
-            # - name: DD_RUNTIME_METRICS_ENABLED
-            #   value: "true"
+            - name: DD_LOGS_INJECTION
+              value: "true"
+            - name: DD_TRACE_SAMPLE_RATE
+              value: "0.5"
+            - name: DD_RUNTIME_METRICS_ENABLED
+              value: "true"
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: DatabaseSettings__ConnectionString

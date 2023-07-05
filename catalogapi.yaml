@@ -4,7 +4,7 @@ metadata:
   name: catalogapi-deployment
   labels:
     app: catalogapi
-    tags.datadoghq.com/env: Deployment
+    tags.datadoghq.com/env: Development
     tags.datadoghq.com/service: catalogapi-service
     tags.datadoghq.com/version: v1
 spec:

@@ -29,7 +29,7 @@ spec:
           ports:
             - containerPort: 80
           env:
-          - name: DD_PROFILING_ENABLED
+            - name: DD_PROFILING_ENABLED
               value: "true"
             - name: DD_LOGS_INJECTION
               value: "true"

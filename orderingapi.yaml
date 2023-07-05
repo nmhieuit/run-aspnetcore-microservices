@@ -4,6 +4,9 @@ metadata:
   name: orderingapi-deployment
   labels:
     app: orderingapi
+    tags.datadoghq.com/env: Development
+    tags.datadoghq.com/service: orderingapi
+    tags.datadoghq.com/version: v1
 spec:
   replicas: 1
   selector:
@@ -13,6 +16,9 @@ spec:
     metadata:
       labels:
         app: orderingapi
+        tags.datadoghq.com/env: Development
+        tags.datadoghq.com/service: orderingapi
+        tags.datadoghq.com/version: v1
     spec:
       containers:
         - name: orderingapi
@@ -21,6 +27,14 @@ spec:
           ports:
             - containerPort: 80
           env:
+            - name: DD_PROFILING_ENABLED
+              value: "true"
+            - name: DD_LOGS_INJECTION
+              value: "true"
+            - name: DD_TRACE_SAMPLE_RATE
+              value: "0.5"
+            - name: DD_RUNTIME_METRICS_ENABLED
+              value: "true"
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: ConnectionStrings__OrderingConnectionString

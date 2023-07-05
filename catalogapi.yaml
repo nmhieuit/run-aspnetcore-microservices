@@ -5,7 +5,7 @@ metadata:
   labels:
     app: catalogapi
     tags.datadoghq.com/env: Development
-    tags.datadoghq.com/service: catalogapi-service
+    tags.datadoghq.com/service: catalogapi
     tags.datadoghq.com/version: v1
 spec:
   replicas: 1
@@ -17,7 +17,7 @@ spec:
       labels:
         app: catalogapi
         tags.datadoghq.com/env: Development
-        tags.datadoghq.com/service: catalogapi-service
+        tags.datadoghq.com/service: catalogapi
         tags.datadoghq.com/version: v1
         admission.datadoghq.com/enabled: "true"
       annotations:

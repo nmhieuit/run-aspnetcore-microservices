@@ -4,9 +4,9 @@ metadata:
   name: discountapi-deployment
   labels:
     app: discountapi
-    tags.datadoghq.com/env: dev
-    tags.datadoghq.com/service: discount
-    tags.datadoghq.com/version: 1
+    tags.datadoghq.com/env: "dev"
+    tags.datadoghq.com/service: "discount"
+    tags.datadoghq.com/version: "1"
 spec:
   replicas: 1
   selector:
@@ -16,12 +16,12 @@ spec:
     metadata:
       labels:
         app: discountapi
-        tags.datadoghq.com/env: dev
-        tags.datadoghq.com/service: discount
-        tags.datadoghq.com/version: 1
+        tags.datadoghq.com/env: "dev"
+        tags.datadoghq.com/service: "discount"
+        tags.datadoghq.com/version: "1"
         admission.datadoghq.com/enabled: "true"
       annotations:
-        admission.datadoghq.com/dotnet-lib.version: v2.33.0
+        admission.datadoghq.com/dotnet-lib.version: "v2.33.0"
     spec:
       containers:
         - name: discountapi

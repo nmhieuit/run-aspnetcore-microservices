@@ -4,6 +4,9 @@ metadata:
   name: discountapi-deployment
   labels:
     app: discountapi
+    tags.datadoghq.com/env: dev
+    tags.datadoghq.com/service: discount
+    tags.datadoghq.com/version: 1
 spec:
   replicas: 1
   selector:
@@ -13,6 +16,12 @@ spec:
     metadata:
       labels:
         app: discountapi
+        tags.datadoghq.com/env: dev
+        tags.datadoghq.com/service: discount
+        tags.datadoghq.com/version: 1
+        admission.datadoghq.com/enabled: "true"
+      annotations:
+        admission.datadoghq.com/dotnet-lib.version: v2.33.0
     spec:
       containers:
         - name: discountapi
@@ -21,6 +30,12 @@ spec:
           ports:
             - containerPort: 80
           env:
+            - name: DD_LOGS_INJECTION
+              value: "true"
+            - name: DD_TRACE_SAMPLE_RATE
+              value: "0.5"
+            - name: DD_RUNTIME_METRICS_ENABLED
+              value: "true"
             - name: ASPNETCORE_ENVIRONMENT
               value: "Development"
             - name: DatabaseSettings__ConnectionString

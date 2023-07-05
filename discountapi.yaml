@@ -19,8 +19,9 @@ spec:
         tags.datadoghq.com/env: Development
         tags.datadoghq.com/service: discountapi
         tags.datadoghq.com/version: v1
+      admission.datadoghq.com/enabled: "true"
       annotations:
-        admission.datadoghq.com/dotnet-lib.version: "v2.32.0"
+        admission.datadoghq.com/dotnet-lib.version: v2.32.0
     spec:
       containers:
         - name: discountapi

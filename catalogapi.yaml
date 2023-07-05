@@ -4,9 +4,9 @@ metadata:
   name: catalogapi-deployment
   labels:
     app: catalogapi
-    tags.datadoghq.com/env: "dev"
-    tags.datadoghq.com/service: "catalog"
-    tags.datadoghq.com/version: "1"
+    tags.datadoghq.com/env: dev
+    tags.datadoghq.com/service: catalog
+    tags.datadoghq.com/version: v1
 spec:
   replicas: 1
   selector:
@@ -16,12 +16,12 @@ spec:
     metadata:
       labels:
         app: catalogapi
-        tags.datadoghq.com/env: "dev"
-        tags.datadoghq.com/service: "catalog"
-        tags.datadoghq.com/version: "1"
+        tags.datadoghq.com/env: dev
+        tags.datadoghq.com/service: catalog
+        tags.datadoghq.com/version: v1
         admission.datadoghq.com/enabled: "true"
       annotations:
-        admission.datadoghq.com/dotnet-lib.version: "v2.33.0"
+        admission.datadoghq.com/dotnet-lib.version: v2.33.0
     spec:
       containers:
         - name: catalogapi

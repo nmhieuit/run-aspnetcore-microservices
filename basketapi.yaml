@@ -26,7 +26,7 @@ spec:
             - name: GrpcSettings__DiscountUrl
               value: "http://discountgrpc-service:8003"
             - name: EventBusSettings__HostAddress
-              value: "amqp://guest:guest@rabbitmq-service:5672"
+              value: "amqp://user:S2mdYLTCxh0BY8Ji@my-release-rabbitmq:5672"
             - name: CacheSettings__ConnectionString
               valueFrom:
                   configMapKeyRef:

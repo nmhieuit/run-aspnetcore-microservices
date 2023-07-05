@@ -26,7 +26,7 @@ spec:
             - name: ConnectionStrings__OrderingConnectionString
               value: "Server=orderdb-service;Database=OrderDb;User Id=sa;Password=SwN12345678"
             - name: EventBusSettings__HostAddress
-              value: "amqp://guest:guest@rabbitmq-service:5672"
+              value: "amqp://user:S2mdYLTCxh0BY8Ji@my-release-rabbitmq:5672"
             - name: ElasticConfiguration
               value: "Uri=http://elasticsearch:9200"  
           resources:

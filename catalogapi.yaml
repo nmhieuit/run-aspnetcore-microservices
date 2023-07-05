@@ -16,12 +16,12 @@ spec:
     metadata:
       labels:
         app: catalogapi
-      #   tags.datadoghq.com/env: Development
-      #   tags.datadoghq.com/service: catalogapi
-      #   tags.datadoghq.com/version: v1
-      #   admission.datadoghq.com/enabled: "true"
-      # annotations:
-      #   admission.datadoghq.com/dotnet-lib.version: v2.33.0
+        tags.datadoghq.com/env: Development
+        tags.datadoghq.com/service: catalogapi
+        tags.datadoghq.com/version: v1
+        admission.datadoghq.com/enabled: "true"
+      annotations:
+        admission.datadoghq.com/dotnet-lib.version: v2.32.0
     spec:
       containers:
         - name: catalogapi

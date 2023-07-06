@@ -44,8 +44,10 @@ spec:
               value: "1"
             - name: DD_ENV
               value: "dev"
+            - name: DD_SERVICE
+              value: "catalogapi"  
             - name: DD_VERSION
-              value: "1.2.3"
+              value: "v1"
             - name: DD_LOGS_INJECTION
               value: "true"
             - name: DD_TRACE_SAMPLE_RATE

@@ -55,7 +55,7 @@ kind: Service
 metadata:
   name: ocelotapigw-service
 spec:
-  type: LoadBalancer
+  # type: LoadBalancer
   selector:
     app: ocelotapigw
   ports:

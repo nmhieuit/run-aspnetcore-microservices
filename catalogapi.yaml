@@ -60,7 +60,7 @@ kind: Service
 metadata:
   name: catalogapi-service
 spec:
-  type: LoadBalancer
+  # type: LoadBalancer
   selector:
     app: catalogapi
   ports:

@@ -62,7 +62,7 @@ metadata:
   labels:
     app: discountgrpc
 spec:
-  type: LoadBalancer
+  # type: LoadBalancer
   selector:
     app: discountgrpc
   ports:
